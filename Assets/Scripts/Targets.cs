@@ -5,9 +5,9 @@ using System.Collections;
 public class Targets : MonoBehaviour {
 
     [SerializeField]
-    private float score = 0f;
+    private float score = 0f; // score counter
     [SerializeField]
-    private Text scoreText;
+    private Text scoreText; // visual score text in editor
     [SerializeField]
     private bool lowTarget = false;
     [SerializeField]
@@ -17,10 +17,10 @@ public class Targets : MonoBehaviour {
 
     void Update()
     {
-        scoreText.text = "Score:" + ((int)score).ToString();
+        scoreText.text = "Score:" + ((int)score).ToString(); 
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other) // Coliders for adding score 
     {
 
         if (other.CompareTag("lowtarget"))
@@ -51,7 +51,7 @@ public class Targets : MonoBehaviour {
             highTarget = false;
         }
 
-        if (lowTarget == true)
+        if (lowTarget == true) // added scores dependant on the target indication 
         {
             score += 10;
         }
